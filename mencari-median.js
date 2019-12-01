@@ -20,7 +20,7 @@ function cariMedian(arr) {
         result.push(median);
     }
 
-    return result;
+    return Number(result);
 }
 
 // TEST CASES
