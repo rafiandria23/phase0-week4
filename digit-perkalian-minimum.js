@@ -10,19 +10,18 @@
 function digitPerkalianMinimum(angka) {
     let result = [];
     let temp = [];
-    let temp2 = [];
-
-    for (let i = 1; i < angka; i++) {
-        for (let j = i + 1; j < angka; j++) {
-            if (i * j === angka) {
-                temp.push(i);
-                temp2.push(j);
-            }
+    
+    
+    for (let i = 1; i <= angka; i++) {
+        if (angka % i === 0) {
+            temp.push(`${i}${angka/i}`);
         }
     }
 
-    return `${temp} ${temp2}`;
-    
+    temp.sort((a, b) => {return a.length - b.length});
+    result.push(temp[0].length);
+
+    return Number(result);
 }
 
 // TEST CASES
