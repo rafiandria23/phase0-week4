@@ -27,14 +27,12 @@ function cariModus(arr) {
     result.push(modeStack[0]);
 
     for (let k = 0; k < modeStack.length; k++) {
-        for (let l = k+1; l < modeStack.length; l++) {
-            if (modeStack[k] === modeStack[l]) {
-                return -1;
-            }
+        if ((modeStack[k] === modeStack[k+1]) && (modeStack.length === arr.length * 2)) {
+            return -1;
         }
     }
 
-    return result;
+    return Number(result);
 }
 
 // TEST CASES
