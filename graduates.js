@@ -9,6 +9,50 @@
 
 function graduates(students) {
     // Code disini
+
+    if (students === [] || students.length === 0) {
+        return {};
+    }
+
+    let result = {};
+    result.foxes = [];
+    result.wolves = [];
+    result.tigers = [];
+
+    for (let i = 0; i < students.length; i++) {
+        if (students[i].score > 75) {
+            if (students[i].class === 'foxes') {
+                result.foxes.push({
+                    name: students[i].name,
+                    score: students[i].score
+                });
+            }
+            else if (students[i].class === 'wolves') {
+                result.wolves.push({
+                    name: students[i].name,
+                    score: students[i].score
+                });
+            }
+            if (students[i].class === 'tigers') {
+                result.tigers.push({
+                    name: students[i].name,
+                    score: students[i].score
+                });
+            }
+        }
+    }
+
+    if (result.foxes.length === 0) {
+        delete result.foxes;
+    }
+    if (result.wolves.length === 0) {
+        delete result.wolves;
+    }
+    if (result.tigers.length === 0) {
+        delete result.tigers;
+    }
+
+    return result;
 }
 
 console.log(graduates([{
